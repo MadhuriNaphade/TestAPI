@@ -15,8 +15,8 @@ public class QuitWeatherDetails {
 	public void DoneWeather()
 	{
 	//retrieved data
-		String weather = res.jsonPath().getString("weather");
-		System.out.println(weather);
+		String weatherdetails = res.jsonPath().getString("weather");
+		System.out.println("Weather Details = >" + weatherdetails);
 	}
 	@AfterTest
 	@Then("quit successfully")
@@ -24,5 +24,6 @@ public class QuitWeatherDetails {
 	{
 		ConnectionConfig connectionConfig = new ConnectionConfig();
 		connectionConfig.closeIdleConnectionsAfterEachResponseAfter(10, TimeUnit.MILLISECONDS);
+		System.out.println("Connection closed");
 	}
 }
